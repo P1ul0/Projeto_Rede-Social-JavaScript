@@ -45,42 +45,4 @@ header{
   flex-direction: column;
   align-items: center;
 }
-.post{
-  width: 360px;
-  margin-top: 200px;
-  background-color: #cde54e;
-  display: flex;
-  flex-direction: column;
-  border-radius: 30px;
-  padding: 10px;
-}
-.logo-post,a{
-  width: 40px;
-  align-self: flex-end;
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-  margin-right: 10px;
-}
-.img-post{
-  width: 100%;
-  margin-top: 10px;
-  border-radius: 10px;
-}
-.Descricao{
-  align-self: center;
-  margin-top: 10px;
-}
-.comentario{
-  width: 100%;
-  border: 2px solid black;
-  display: flex;
-  align-items: center;
-  align-self: center;
-  border-radius: 30px;
-  padding: 5px;
-  margin: 5px;
-}
-.logo-comentario{
-  width: 40px;
-}
 

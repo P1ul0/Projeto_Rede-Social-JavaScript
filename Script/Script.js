@@ -1,5 +1,21 @@
 const container = document.querySelector(".conteiner-centro")
 
+
+/* 
+async function users(){
+    await fetch ("https://dummyjson.com/users")
+    .then(res => res.json())
+    .then(res => {
+        let random = Math.floor(Math.random() * res.users.length);
+        const user = res.users[random]
+        
+        const userPrincipal = querySelector(".img_user")
+
+        userPrincipal = user.image[0].length
+
+    })
+}
+ */
 async function comentario(div){
     await fetch("https://dummyjson.com/comments")
     .then(res => res.json())
@@ -94,6 +110,7 @@ for (let i = 0 ; i < 5 ; i++){
             margin-top: 10px;
             `
             //colocando as variaveis na div e conteiner
+            //users()
             div.appendChild(a)
             div.appendChild(img_post)
             div.appendChild(h2)

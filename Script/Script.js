@@ -1,7 +1,5 @@
 const container = document.querySelector(".conteiner-centro")
 
-
-
 async function users(icon_user){
     await fetch ("https://dummyjson.com/users")
     .then(res => res.json())
@@ -12,20 +10,14 @@ async function users(icon_user){
         icon_user.src = user.image
 
         icon_user.style =`
-        width: 150% ;
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: center;
-        align-items: center;
-        margin-right: 40px;
-        text-decoration: none;
-        color: rgb(0, 0, 0);
+        width: 100% ;
         background-color: white ;
         border-radius: 20px ;
         `
     })
 }
 
+        
 async function comentario(div){
     await fetch("https://dummyjson.com/comments")
     .then(res => res.json())
@@ -33,10 +25,13 @@ async function comentario(div){
         let random = Math.floor(Math.random() * res.comments.length);
         const comentario = res.comments[random]
 
+        const icon = document.createElement("img")
         const text_comentario = document.createElement("p")
         const div_comentario = document.createElement("div")
-
+        const a = document.createElement("a")
+        text_comentario.appendChild(icon)
         text_comentario.textContent = comentario.body
+        users(icon)
 
         
         div_comentario.style = `
@@ -49,15 +44,28 @@ async function comentario(div){
         padding: 5px;
         margin: 5px;
         `
-        icone_user.style = `
-        width: 40px;
+        a.style =`
+        width: 50px ;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        margin-right: 40px;
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        background-color: white ;
+        border-radius: 20px ;
         `
-
-        div_comentario.appendChild(icone_user)
+        a.appendChild(icon)
+        div_comentario.appendChild(a)
         div_comentario.appendChild(text_comentario)
         div.appendChild(div_comentario)
     })
 }
+
+
+
+
 
 let qtd_random = Math.floor(Math.random() * 30)
 
@@ -102,7 +110,7 @@ for (let i = 0 ; i < 5 ; i++){
             padding: 10px;
             `
             a.style = `
-            width: 30px;
+            width: 50px;
             align-self: flex-end;
             text-decoration: none;
             color: rgb(0, 0, 0);
@@ -119,11 +127,11 @@ for (let i = 0 ; i < 5 ; i++){
             `
             //colocando as variaveis na div e conteiner
             users(icon_user)
+            comentario(div)
             div.appendChild(a)
             div.appendChild(img_post)
             div.appendChild(h2)
-            div.appendChild(p)
-            comentario(div) 
+            div.appendChild(p) 
             container.appendChild(div)
         });
     })

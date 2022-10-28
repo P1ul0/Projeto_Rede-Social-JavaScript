@@ -1,21 +1,31 @@
 const container = document.querySelector(".conteiner-centro")
 
 
-/* 
-async function users(){
+
+async function users(icon_user){
     await fetch ("https://dummyjson.com/users")
     .then(res => res.json())
     .then(res => {
         let random = Math.floor(Math.random() * res.users.length);
         const user = res.users[random]
-        
-        const userPrincipal = querySelector(".img_user")
 
-        userPrincipal = user.image[0].length
+        icon_user.src = user.image
 
+        icon_user.style =`
+        width: 150% ;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        margin-right: 40px;
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        background-color: white ;
+        border-radius: 20px ;
+        `
     })
 }
- */
+
 async function comentario(div){
     await fetch("https://dummyjson.com/comments")
     .then(res => res.json())
@@ -23,11 +33,9 @@ async function comentario(div){
         let random = Math.floor(Math.random() * res.comments.length);
         const comentario = res.comments[random]
 
-        const icone_user = document.createElement("img")
         const text_comentario = document.createElement("p")
         const div_comentario = document.createElement("div")
 
-        icone_user.src = "Foto_Projeto/logo-usuario.png"
         text_comentario.textContent = comentario.body
 
         
@@ -72,7 +80,7 @@ for (let i = 0 ; i < 5 ; i++){
             const p = document.createElement("p")
     
             // colocando as imagens do post (provisorio)
-            icon_user.src = "Foto_Projeto/logo-usuario.png"
+            
             img_post.src = "Foto_Projeto/Paisagem.jpg"
             a.href = "usuario.html"
             a.appendChild(icon_user)
@@ -95,10 +103,10 @@ for (let i = 0 ; i < 5 ; i++){
             `
             a.style = `
             width: 30px;
-            align-self: flex-start;
+            align-self: flex-end;
             text-decoration: none;
             color: rgb(0, 0, 0);
-            margin-right: 10px;
+            margin-right: 30px;
             `
             img_post.style = `
             width: 100%;
@@ -110,7 +118,7 @@ for (let i = 0 ; i < 5 ; i++){
             margin-top: 10px;
             `
             //colocando as variaveis na div e conteiner
-            //users()
+            users(icon_user)
             div.appendChild(a)
             div.appendChild(img_post)
             div.appendChild(h2)

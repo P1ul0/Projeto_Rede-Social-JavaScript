@@ -20,7 +20,7 @@ header{
 
 .head-usuario{
     display: flex;
-    flex-direction: row-reverse;
+   
     justify-content: center;
     align-items: center;
 }
@@ -29,15 +29,13 @@ header{
     align-self: center;
 }
 #logo-usuario{
-  width:auto;
+  width:70px;
   display: flex;
-  flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
-  
-  margin-right: 40px;
   text-decoration: none;
   color: rgb(0, 0, 0);
+  margin: 40px;
 }
 
 .conteiner-centro{

@@ -1,4 +1,6 @@
 const container = document.querySelector(".conteiner-centro")
+const nome_usuario = document.querySelector(".Nome_usuario")
+const icone_usuario = document.querySelector(".img_user")
 
 async function users(icon_user){
     await fetch ("https://dummyjson.com/users")
@@ -6,14 +8,16 @@ async function users(icon_user){
     .then(res => {
         let random = Math.floor(Math.random() * res.users.length);
         const user = res.users[random]
-
         icon_user.src = user.image
-
         icon_user.style =`
         width: 100% ;
         background-color: white ;
         border-radius: 20px ;
         `
+        if (icon_user == icone_usuario) {
+            nome_usuario.textContent = user.username
+            console.log(nome_usuario.username)
+        }
     })
 }
 
@@ -45,7 +49,7 @@ async function comentario(div){
         margin: 5px;
         `
         a.style =`
-        width: 50px ;
+        width: 30px ;
         display: flex;
         flex-direction: row-reverse;
         justify-content: center;
@@ -64,7 +68,7 @@ async function comentario(div){
 }
 
 
-
+users(icone_usuario)
 
 
 let qtd_random = Math.floor(Math.random() * 30)
@@ -82,16 +86,17 @@ for (let i = 0 ; i < 5 ; i++){
             // criando os elementos
             const div = document.createElement("div")
             const a = document.createElement("a")
-            const icon_user = document.createElement("img")
+            const icon = document.createElement("img")
             const img_post = document.createElement("img")
             const h2 = document.createElement("h2")
             const p = document.createElement("p")
-    
+            
+            
             // colocando as imagens do post (provisorio)
             
             img_post.src = "Foto_Projeto/Paisagem.jpg"
             a.href = "usuario.html"
-            a.appendChild(icon_user)
+            a.appendChild(icon)
     
             // colocando o texto no h2 e p
             h2.textContent = post.title
@@ -114,7 +119,7 @@ for (let i = 0 ; i < 5 ; i++){
             align-self: flex-end;
             text-decoration: none;
             color: rgb(0, 0, 0);
-            margin-right: 30px;
+            margin-right:10px;
             `
             img_post.style = `
             width: 100%;
@@ -126,7 +131,7 @@ for (let i = 0 ; i < 5 ; i++){
             margin-top: 10px;
             `
             //colocando as variaveis na div e conteiner
-            users(icon_user)
+            users(icon)
             comentario(div)
             div.appendChild(a)
             div.appendChild(img_post)

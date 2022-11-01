@@ -14,6 +14,10 @@ async function users(icon_user){
         background-color: white ;
         border-radius: 20px ;
         `
+        icon_user.addEventListener("click", () =>{
+            sessionStorage.setItem("dados", user.id)
+        })
+        
         if (icon_user == icone_usuario) {
             nome_usuario.textContent = user.username
             console.log(nome_usuario.username)
@@ -97,7 +101,7 @@ for (let i = 0 ; i < 5 ; i++){
             img_post.src = "Foto_Projeto/Paisagem.jpg"
             a.href = "usuario.html"
             a.appendChild(icon)
-    
+            
             // colocando o texto no h2 e p
             h2.textContent = post.title
             p.textContent = post.body

@@ -20,7 +20,6 @@ async function users(icon_user){
         
         if (icon_user == icone_usuario) {
             nome_usuario.textContent = user.username
-            console.log(nome_usuario.username)
         }
     })
 }
@@ -74,10 +73,20 @@ async function comentario(div){
 
 users(icone_usuario)
 
+async function foto_post(img_post){
+    await fetch("https://dog.ceo/api/breeds/image/random")
+    .then(res => res.json())
+    .then(res => {
+        img_post.src = res.message
+    })
+}
+
+  
+
 
 let qtd_random = Math.floor(Math.random() * 30)
 
-for (let i = 0 ; i < 5 ; i++){
+for (let i = 0 ; i < qtd_random ; i++){
     window.addEventListener('load', event =>{
         event.preventDefault()
         fetch('https://dummyjson.com/posts')
@@ -135,6 +144,7 @@ for (let i = 0 ; i < 5 ; i++){
             margin-top: 10px;
             `
             //colocando as variaveis na div e conteiner
+            foto_post(img_post)
             users(icon)
             comentario(div)
             div.appendChild(a)

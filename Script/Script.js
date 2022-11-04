@@ -107,7 +107,7 @@ for (let i = 0 ; i < qtd_random ; i++){
             
             // colocando as imagens do post (provisorio)
             
-            img_post.src = "Foto_Projeto/Paisagem.jpg"
+            img_post.src = ""
             a.href = "usuario.html"
             a.appendChild(icon)
             

@@ -84,9 +84,8 @@ async function foto_post(img_post){
   
 
 
-let qtd_random = Math.floor(Math.random() * 30)
 
-for (let i = 0 ; i < qtd_random ; i++){
+for (let i = 0 ; i < 10 ; i++){
     window.addEventListener('load', event =>{
         event.preventDefault()
         fetch('https://dummyjson.com/posts')
